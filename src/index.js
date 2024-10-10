@@ -46,7 +46,7 @@ function calcularTotal() {
     0
   );
 
-  alert(`Total do carrinho: R$${total.toFixed(2)}`);
+  // alert(`Total do carrinho: R$${total.toFixed(2)}`);
 }
 
 // Função para exibir o carrinho
@@ -60,9 +60,10 @@ function exibirCarrinho() {
     carrinho.forEach((item) => {
     const subTotal = item.preco * item.quantidade;
     valorTotal += subTotal;
-    mensagem += `${item.nome} - Preço: R$${item.preco} - Quantidade: ${item.quantidade} - SubTotal: R$${subTotal.toFixed(2)}\n`;
+    mensagem += `${item.nome} - Preço: R$${item.preco.toFixed(2)} - Quantidade: ${item.quantidade} - SubTotal: R$${subTotal.toFixed(2)}\n`;
     });
 
+    mensagem += `\nValor Total da Compra: R$${valorTotal.toFixed(2)}`;
     alert(mensagem);
   }
 }
@@ -70,5 +71,3 @@ function exibirCarrinho() {
 // Exemplo de uso
 capturarProdutos();
 exibirCarrinho();
-
-// Lógica para calcular o subtotal e exibir com alert()
